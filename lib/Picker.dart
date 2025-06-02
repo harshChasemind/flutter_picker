@@ -438,7 +438,7 @@ class PickerWidgetState<T> extends State<_PickerWidget> {
             textScaleFactor: MediaQuery.of(context).textScaleFactor,
             style: style ??
                 theme!.textTheme.button!.copyWith(
-                    color: theme!.accentColor,
+                    color: theme!.colorScheme.secondary,
                     fontSize: Picker.DefaultTextSize)));
   }
 
@@ -451,7 +451,7 @@ class PickerWidgetState<T> extends State<_PickerWidget> {
       items.add(DefaultTextStyle(
           style: picker.cancelTextStyle ??
               theme!.textTheme.button!.copyWith(
-                  color: theme!.accentColor, fontSize: Picker.DefaultTextSize),
+                  color: theme!.colorScheme.secondary, fontSize: Picker.DefaultTextSize),
           child: picker.cancel!));
     } else {
       String? _cancelText =
@@ -479,7 +479,7 @@ class PickerWidgetState<T> extends State<_PickerWidget> {
       items.add(DefaultTextStyle(
           style: picker.confirmTextStyle ??
               theme!.textTheme.button!.copyWith(
-                  color: theme!.accentColor, fontSize: Picker.DefaultTextSize),
+                  color: theme!.colorScheme.secondary, fontSize: Picker.DefaultTextSize),
           child: picker.confirm!));
     } else {
       String? _confirmText =

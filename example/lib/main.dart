@@ -169,7 +169,7 @@ class _MyHomePageState extends State<MyHomePage> {
         print(picker.getSelectedValues());
       }
     );
-    picker.show(_scaffoldKey.currentState);
+    picker.show(_scaffoldKey.currentState!);
   }
 
   showPickerModal(BuildContext context) async {
@@ -242,7 +242,7 @@ class _MyHomePageState extends State<MyHomePage> {
           print(value.toString());
           print(picker.getSelectedValues());
         },
-    ).show(_scaffoldKey.currentState);
+    ).show(_scaffoldKey.currentState!);
   }
 
 
@@ -399,7 +399,7 @@ class _MyHomePageState extends State<MyHomePage> {
             stateText = picker.adapter.toString();
           });
         }
-    ).show(_scaffoldKey.currentState);
+    ).show(_scaffoldKey.currentState!);
   }
 
   showPickerDateRange(BuildContext context) {
@@ -426,14 +426,14 @@ class _MyHomePageState extends State<MyHomePage> {
           onPressed: () {
             Navigator.pop(context);
           },
-          child: Text(PickerLocalizations.of(context).cancelText)),
+          child: Text(PickerLocalizations.of(context).cancelText!)),
       TextButton(
           onPressed: () {
             Navigator.pop(context);
-            ps.onConfirm(ps, ps.selecteds);
-            pe.onConfirm(pe, pe.selecteds);
+            ps.onConfirm!(ps, ps.selecteds);
+            pe.onConfirm!(pe, pe.selecteds);
           },
-          child: Text(PickerLocalizations.of(context).confirmText))
+          child: Text(PickerLocalizations.of(context).confirmText!))
     ];
 
     showDialog(
@@ -481,7 +481,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onSelect: (Picker picker, int index, List<int> selected) {
           showMsg(picker.adapter.toString());
         }
-    ).show(_scaffoldKey.currentState);
+    ).show(_scaffoldKey.currentState!);
   }
 
   /// 圆角背景
@@ -548,7 +548,7 @@ class _MyHomePageState extends State<MyHomePage> {
           )),
         ],
         onSelect: (Picker picker, int index, List<int> selected) {
-          range[0] = (picker.adapter as DateTimePickerAdapter).value;
+          range[0] = (picker.adapter as DateTimePickerAdapter).value!;
         },
         onConfirmBefore: (picker, selected) async {
           if (range[0] == null) {
@@ -581,10 +581,10 @@ class _MyHomePageState extends State<MyHomePage> {
           )),
         ],
         onSelect: (Picker picker, int index, List<int> selected) {
-          range[1] = (picker.adapter as DateTimePickerAdapter).value;
+          range[1] = (picker.adapter as DateTimePickerAdapter).value!;
         }
     );
-    _scaffoldKey.currentState.showBottomSheet((BuildContext context) {
+    _scaffoldKey.currentState!.showBottomSheet((BuildContext context) {
       return Column(
         mainAxisSize: MainAxisSize.min,
         children: [
